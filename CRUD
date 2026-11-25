@@ -1,1 +1,93 @@
+use car
 
+db.createCollection("carss")
+
+db.carss.insertOne("
+{
+ "maker": "Hyundai",
+ "model": "Creta",
+ "fuel_type": "Diesel",
+ "transmission": "Manual",
+ "engine": {
+ "type": "Naturally Aspirated",
+ "cc": 1493,
+ "torque": "250 Nm"
+ },
+ "features": [
+ "Sunroof",
+ "Leather Seats",
+ "Wireless Charging",
+"Ventilated Seats",
+"Bluetooth"
+ ],
+ "sunroof": true,
+ "airbags": 6
+ }
+")
+
+db.carss.insertMany("
+ {
+ "maker": "Maruti Suzuki",
+ "model": "Baleno",
+ "fuel_type": "Petrol",
+ "transmission": "Automatic",
+ "engine": {
+ "type": "Naturally Aspirated",
+ "cc": 1197,
+ "torque": "113 Nm"
+ },
+ "features": [
+ "Projector Headlamps",
+ "Apple CarPlay",
+ "ABS"
+ ],
+ "sunroof": false,
+ "airbags": 2
+ },
+ {
+ "maker": "Mahindra",
+ "model": "XUV500",
+ "fuel_type": "Diesel",
+ "transmission": "Manual",
+ "engine": {
+ "type": "Turbocharged",
+ "cc": 2179,
+ "torque": "360 Nm"
+ },
+ "features": [
+ "All-Wheel Drive",
+ "Navigation System",
+ "Cruise Control"
+ ],
+ "sunroof": true,
+ "airbags": 6
+ },
+ {
+ "maker": "Honda",
+ "model": "City",
+ "fuel_type": "Petrol",
+ "transmission": "Automatic",
+ "engine": {
+ "type": "Naturally Aspirated",
+ "cc": 1498,
+ "torque": "145 Nm"
+ },
+ "features": [
+ "Keyless Entry",
+ "Auto AC",
+ "Multi-angle Rearview Camera"
+ ],
+ "sunroof": false,
+ "airbags": 4
+ }
+]
+")
+
+db.carss.find()
+//all data will be there
+
+db.carss.find({},{model:1})
+
+db.carss.find({},{model:1,_id:0})
+
+db.carss.find({fuel_type:"Petrol"})
