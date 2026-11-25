@@ -91,3 +91,5 @@ db.carss.find({},{model:1})
 db.carss.find({},{model:1,_id:0})
 
 db.carss.find({fuel_type:"Petrol"})
+
+db.carss.find({"engine.type":"Turbocharged"})
