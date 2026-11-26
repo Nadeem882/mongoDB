@@ -93,3 +93,13 @@ db.carss.find({},{model:1,_id:0})
 db.carss.find({fuel_type:"Petrol"})
 
 db.carss.find({"engine.type":"Turbocharged"})
+
+db.carss.find({features : "Sunroof"})
+
+db.carss.updateOne({model:"Nexon"},{$set:{Colour:"Blue"}})
+
+db.carss.updateOne({model:"Nexon"},{$push:{features:"Heated seats"}})
+
+db.carss.updateMany({fuel_type:"Diesel"},{$push:{Alloys :"yes"}})
+
+db.carss.updateOne({model:"Creta"},{$set:{"engine.torque":"270 Nm"}})
