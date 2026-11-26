@@ -103,3 +103,11 @@ db.carss.updateOne({model:"Nexon"},{$push:{features:"Heated seats"}})
 db.carss.updateMany({fuel_type:"Diesel"},{$push:{Alloys :"yes"}})
 
 db.carss.updateOne({model:"Creta"},{$set:{"engine.torque":"270 Nm"}})
+
+db.carss.updateOne({model:"Nexon"},{$unset:{Colour:""}})
+
+db.carss.updateMany({},{$set:{Colour:"Blue"}})
+
+db.carss.updateMany({fuel_type:"Diesel"},{$push:{features:{$each:["Wireless charging","Voice control"]}}})
+
+
