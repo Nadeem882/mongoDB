@@ -110,4 +110,8 @@ db.carss.updateMany({},{$set:{Colour:"Blue"}})
 
 db.carss.updateMany({fuel_type:"Diesel"},{$push:{features:{$each:["Wireless charging","Voice control"]}}})
 
+db.carss.updateMany({model:"Venue"},{$set:{Maker:"Hyundia"}},{upsert:true})
 
+db.carss.deleteOne({model:"Nexon"})
+
+db.carss.deleteMany({fuel_type:"Petrol"})
