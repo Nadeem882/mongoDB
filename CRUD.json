@@ -139,3 +139,7 @@ db.carss.find({$and:[{"fuel_type":"Diesel"},{"sunroof":true},{"engine.type":"Tur
 db.carss.find({$or:[{"fuel_type":"Diesel"},{"sunroof":true},{"engine.type":"Turbocharged"}]})
 
 db.carss.find({$nor:[{"fuel_type":"Diesel"},{"sunroof":true},{"engine.type":"Turbocharged"}]})
+
+db.carss.find({features:{$siza:3}})
+
+db.carss.find({features:{$all:["Bluetooth","Sunroof"]}})
