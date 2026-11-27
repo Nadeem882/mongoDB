@@ -115,3 +115,22 @@ db.carss.updateMany({model:"Venue"},{$set:{Maker:"Hyundia"}},{upsert:true})
 db.carss.deleteOne({model:"Nexon"})
 
 db.carss.deleteMany({fuel_type:"Petrol"})
+
+//OPERATORS
+
+db.carss.find({"engine.cc":{$gt:1400}})
+
+db.carss.find({"engine.cc":{$lt:1400}})
+
+db.carss.find({"engine.cc":{$lte:1400}})
+
+db.carss.find({"engine.cc":{$gte:1400}})
+
+db.carss.find({"engine.cc":{$ne:1400}})
+
+db.carss.find({"engine.cc":{$eq:1400}})
+
+db.carss.find({"engine.cc":{$in:[1498,2179]}})
+
+db.carss.find({"engine.cc":{$nin:[1498,2179]}})
+
