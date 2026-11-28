@@ -143,3 +143,15 @@ db.carss.find({$nor:[{"fuel_type":"Diesel"},{"sunroof":true},{"engine.type":"Tur
 db.carss.find({features:{$siza:3}})
 
 db.carss.find({features:{$all:["Bluetooth","Sunroof"]}})
+
+db.carss.find({fuel_type:"Petrol"}).count()
+
+db.carss.find({},{_id:0,model:1}).sort({model:1})
+
+db.carss.find({},{_id:0,maker:1,model:1}).sort({model:1})
+
+db.carss.find().limit(2)
+
+db.carss.find({},{model:1}).limit(2)
+
+db.carss.find().skip(2)
